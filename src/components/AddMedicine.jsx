@@ -98,56 +98,154 @@ else{
      }
     }
   return (
-    <>
-     <Button variant="info" onClick={handleShow}>
-        Add Items
-      </Button>
-      <Button variant="info" >
-       <Link to={'/medicine'} style={{textDecoration:"none" , color:"white"}}> Medicine Page</Link>
-      </Button>
+    // <>
+    //  <Button variant="info" onClick={handleShow}>
+    //     Add Items
+    //   </Button>
+    //   <Button variant="info" >
+    //    <Link to={'/medicine'} style={{textDecoration:"none" , color:"white"}}> Medicine Page</Link>
+    //   </Button>
 
-      <Modal
-        show={show}
-        onHide={handleClose}
-        backdrop="static"
-        keyboard={false}
-        size='lg'
-        centered
-      >
-        <Modal.Header closeButton>
-          <Modal.Title>Item Details</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <Row>
-            <Col md={6}>
-            <label htmlFor="image" className='text-center'>
-        <input id="image" type="file" style={{display:"none"}} onChange={(e)=>setItemDetails({...itemDetails,image:e.target.files[0]})} />
-        <img width={"100%"} src={preview?preview:"https://www.everypixel.com/covers/microstock/vector/health/pharmacy/cover.jpg"} alt="no image" className='rounded ' />
-         </label>
-            </Col>
-            <Col md={6} className='mt-5'>
-              <div>
-                 <div className='mb-3 w-100'> 
-               <input type="text" className='form-control' placeholder='Medicine Or LabTest Name' value={itemDetails.name} onChange={(e)=>setItemDetails({...itemDetails,name:e.target.value})} />
-               </div>
-               <div className='mb-3 w-100'>
-               <input type="text" className='form-control' placeholder='Medicine Or LabTest Price' value={itemDetails.price} onChange={(e)=>setItemDetails({...itemDetails,price:e.target.value})} />
-               </div>
-               <div className='mb-3 w-100'>
-               <textarea type="text" className='form-control' placeholder='Medicine Or LabTest Details' value={itemDetails.details} onChange={(e)=>setItemDetails({...itemDetails,details:e.target.value})} />
-               </div>
-              </div>
-            </Col>
-          </Row>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose1}>
-            Cancel
-          </Button>
-          <Button variant="primary" onClick={handleAdd}>Add</Button>
-        </Modal.Footer>
-      </Modal>
-    </>
+    //   <Modal
+    //     show={show}
+    //     onHide={handleClose}
+    //     backdrop="static"
+    //     keyboard={false}
+    //     size='lg'
+    //     centered
+    //   >
+    //     <Modal.Header closeButton>
+    //       <Modal.Title>Item Details</Modal.Title>
+    //     </Modal.Header>
+    //     <Modal.Body>
+    //       <Row>
+    //         <Col md={6}>
+    //         <label htmlFor="image" className='text-center'>
+    //     <input id="image" type="file" style={{display:"none"}} onChange={(e)=>setItemDetails({...itemDetails,image:e.target.files[0]})} />
+    //     <img width={"100%"} src={preview?preview:"https://www.everypixel.com/covers/microstock/vector/health/pharmacy/cover.jpg"} alt="no image" className='rounded ' />
+    //      </label>
+    //         </Col>
+    //         <Col md={6} className='mt-5'>
+    //           <div>
+    //              <div className='mb-3 w-100'> 
+    //            <input type="text" className='form-control' placeholder='Medicine Or LabTest Name' value={itemDetails.name} onChange={(e)=>setItemDetails({...itemDetails,name:e.target.value})} />
+    //            </div>
+    //            <div className='mb-3 w-100'>
+    //            <input type="text" className='form-control' placeholder='Medicine Or LabTest Price' value={itemDetails.price} onChange={(e)=>setItemDetails({...itemDetails,price:e.target.value})} />
+    //            </div>
+    //            <div className='mb-3 w-100'>
+    //            <textarea type="text" className='form-control' placeholder='Medicine Or LabTest Details' value={itemDetails.details} onChange={(e)=>setItemDetails({...itemDetails,details:e.target.value})} />
+    //            </div>
+    //           </div>
+    //         </Col>
+    //       </Row>
+    //     </Modal.Body>
+    //     <Modal.Footer>
+    //       <Button variant="secondary" onClick={handleClose1}>
+    //         Cancel
+    //       </Button>
+    //       <Button variant="primary" onClick={handleAdd}>Add</Button>
+    //     </Modal.Footer>
+    //   </Modal>
+    // </>
+
+
+
+    <>
+  <Button variant="info" onClick={handleShow}>
+    Add Items
+  </Button>
+  <Button variant="info">
+    <Link to={'/medicine'} style={{ textDecoration: "none", color: "white" }}>
+      Medicine Page
+    </Link>
+  </Button>
+
+  <Modal
+    show={show}
+    onHide={handleClose}
+    backdrop="static"
+    keyboard={false}
+    size="lg"
+    centered
+  >
+    <Modal.Header closeButton>
+      <Modal.Title>Item Details</Modal.Title>
+    </Modal.Header>
+    <Modal.Body>
+      <Row>
+        <Col md={6}>
+          <label htmlFor="image" className="text-center">
+            <input
+              id="image"
+              type="file"
+              style={{ display: "none" }}
+              onChange={(e) =>
+                setItemDetails({ ...itemDetails, image: e.target.files[0] })
+              }
+            />
+            <img
+              width={"100%"}
+              src={
+                preview
+                  ? preview
+                  : "https://www.everypixel.com/covers/microstock/vector/health/pharmacy/cover.jpg"
+              }
+              alt="no image"
+              className="rounded img-fluid"
+            />
+          </label>
+        </Col>
+        <Col md={6} className="mt-md-0 mt-3">
+          <div>
+            <div className="mb-3">
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Medicine Or LabTest Name"
+                value={itemDetails.name}
+                onChange={(e) =>
+                  setItemDetails({ ...itemDetails, name: e.target.value })
+                }
+              />
+            </div>
+            <div className="mb-3">
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Medicine Or LabTest Price"
+                value={itemDetails.price}
+                onChange={(e) =>
+                  setItemDetails({ ...itemDetails, price: e.target.value })
+                }
+              />
+            </div>
+            <div className="mb-3">
+              <textarea
+                type="text"
+                className="form-control"
+                placeholder="Medicine Or LabTest Details"
+                value={itemDetails.details}
+                onChange={(e) =>
+                  setItemDetails({ ...itemDetails, details: e.target.value })
+                }
+              />
+            </div>
+          </div>
+        </Col>
+      </Row>
+    </Modal.Body>
+    <Modal.Footer>
+      <Button variant="secondary" onClick={handleClose1}>
+        Cancel
+      </Button>
+      <Button variant="primary" onClick={handleAdd}>
+        Add
+      </Button>
+    </Modal.Footer>
+  </Modal>
+</>
+
   )
 }
 

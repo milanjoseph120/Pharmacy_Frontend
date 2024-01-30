@@ -93,53 +93,133 @@ function EditItem({edit}) {
         
        }
   return (
+    // <div>
+    //      <button onClick={handleShow} className='btn'><i class="fa-solid fa-pen-to-square text-info"></i></button>
+
+
+
+    //      <Modal
+    //     show={show}
+    //     onHide={handleClose}
+    //     backdrop="static"
+    //     keyboard={false}
+    //     size='lg'
+    //     centered
+    //   >
+    //     <Modal.Header closeButton>
+    //       <Modal.Title>Item Details</Modal.Title>
+    //     </Modal.Header>
+    //     <Modal.Body>
+    //       <Row>
+    //         <Col md={6}>
+    //         <label htmlFor="image" className='text-center'>
+    //     <input id="image" type="file" style={{display:"none"}}onChange={(e)=>setItemDetails({...itemDetails,image:e.target.files[0]})}/>
+    //     <img width={"100%"} src={previewImage?previewImage:`${BASE_URL}/uploads/${edit.image}`} alt="no image" className='rounded ' />
+    //      </label>
+    //         </Col>
+    //         <Col md={6} className='mt-5'>
+    //           <div>
+    //              <div className='mb-3 w-100'> 
+    //            <input type="text" className='form-control' placeholder='Medicine Or LabTest Name' value={itemDetails.name} onChange={e=>setItemDetails({...itemDetails,name:e.target.value})}  />
+    //            </div>
+    //            <div className='mb-3 w-100'>
+    //            <input type="text" className='form-control' placeholder='Medicine Or LabTest Price'  value={itemDetails.price} onChange={e=>setItemDetails({...itemDetails,price:e.target.value})} />
+    //            </div>
+    //            <div className='mb-3 w-100'>
+    //            <textarea type="text" className='form-control' placeholder='Medicine Or LabTest Details'  value={itemDetails.details} onChange={e=>setItemDetails({...itemDetails,details:e.target.value})}  />
+    //            </div>
+    //           </div>
+    //         </Col>
+    //       </Row>
+    //     </Modal.Body>
+    //     <Modal.Footer>
+    //       <Button variant="secondary" onClick={handleClose1}>
+    //         Cancel
+    //       </Button>
+    //       <Button variant="primary" onClick={handleUpdate}>Add</Button>
+    //     </Modal.Footer>
+    //   </Modal>
+    // </div>
+
+
     <div>
-         <button onClick={handleShow} className='btn'><i class="fa-solid fa-pen-to-square text-info"></i></button>
+  <button onClick={handleShow} className='btn'>
+    <i class="fa-solid fa-pen-to-square text-info"></i>
+  </button>
 
-
-
-         <Modal
-        show={show}
-        onHide={handleClose}
-        backdrop="static"
-        keyboard={false}
-        size='lg'
-        centered
-      >
-        <Modal.Header closeButton>
-          <Modal.Title>Item Details</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <Row>
-            <Col md={6}>
+  <Modal
+    show={show}
+    onHide={handleClose}
+    backdrop="static"
+    keyboard={false}
+    size='lg'
+    centered
+  >
+    <Modal.Header closeButton>
+      <Modal.Title>Item Details</Modal.Title>
+    </Modal.Header>
+    <Modal.Body>
+      <div className="container">
+        <div className="row">
+          <div className="col-md-6">
             <label htmlFor="image" className='text-center'>
-        <input id="image" type="file" style={{display:"none"}}onChange={(e)=>setItemDetails({...itemDetails,image:e.target.files[0]})}/>
-        <img width={"100%"} src={previewImage?previewImage:`${BASE_URL}/uploads/${edit.image}`} alt="no image" className='rounded ' />
-         </label>
-            </Col>
-            <Col md={6} className='mt-5'>
-              <div>
-                 <div className='mb-3 w-100'> 
-               <input type="text" className='form-control' placeholder='Medicine Or LabTest Name' value={itemDetails.name} onChange={e=>setItemDetails({...itemDetails,name:e.target.value})}  />
-               </div>
-               <div className='mb-3 w-100'>
-               <input type="text" className='form-control' placeholder='Medicine Or LabTest Price'  value={itemDetails.price} onChange={e=>setItemDetails({...itemDetails,price:e.target.value})} />
-               </div>
-               <div className='mb-3 w-100'>
-               <textarea type="text" className='form-control' placeholder='Medicine Or LabTest Details'  value={itemDetails.details} onChange={e=>setItemDetails({...itemDetails,details:e.target.value})}  />
-               </div>
+              <input
+                id="image"
+                type="file"
+                style={{ display: "none" }}
+                onChange={(e) => setItemDetails({ ...itemDetails, image: e.target.files[0] })}
+              />
+              <img
+                width={"100%"}
+                src={previewImage ? previewImage : `${BASE_URL}/uploads/${edit.image}`}
+                alt="no image"
+                className='rounded'
+              />
+            </label>
+          </div>
+          <div className="col-md-6 mt-md-0 mt-3">
+            <div>
+              <div className='mb-3'>
+                <input
+                  type="text"
+                  className='form-control'
+                  placeholder='Medicine Or LabTest Name'
+                  value={itemDetails.name}
+                  onChange={e => setItemDetails({ ...itemDetails, name: e.target.value })}
+                />
               </div>
-            </Col>
-          </Row>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose1}>
-            Cancel
-          </Button>
-          <Button variant="primary" onClick={handleUpdate}>Add</Button>
-        </Modal.Footer>
-      </Modal>
-    </div>
+              <div className='mb-3'>
+                <input
+                  type="text"
+                  className='form-control'
+                  placeholder='Medicine Or LabTest Price'
+                  value={itemDetails.price}
+                  onChange={e => setItemDetails({ ...itemDetails, price: e.target.value })}
+                />
+              </div>
+              <div className='mb-3'>
+                <textarea
+                  type="text"
+                  className='form-control'
+                  placeholder='Medicine Or LabTest Details'
+                  value={itemDetails.details}
+                  onChange={e => setItemDetails({ ...itemDetails, details: e.target.value })}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Modal.Body>
+    <Modal.Footer>
+      <Button variant="secondary" onClick={handleClose1}>
+        Cancel
+      </Button>
+      <Button variant="primary" onClick={handleUpdate}>Add</Button>
+    </Modal.Footer>
+  </Modal>
+</div>
+
   )
 }
 

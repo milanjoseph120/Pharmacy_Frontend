@@ -40,24 +40,50 @@ function MyMedicine() {
         }
   }
   return (
-    <div className='card shadow p-5'>
-     <div className='d-flex justify-content-between'>
-        <h3>Added Items & Test</h3>
-        <AddMedicine/>
-     </div>
-    { adminItems?.length>0?
-    adminItems?.map((item)=>(<div className='mt-4'>
-    <div className='border align-items-center p-3 d-flex'>
-      <h5>{item.name}</h5>
-      <div className='ms-auto d-flex'>
-       <EditItem edit={item}/>
-        <button className='btn'><i class="fa-solid fa-trash" onClick={()=>handleDelete(item._id)}></i></button>
+  //   <div className='card shadow p-5'>
+  //    <div className='d-flex justify-content-between'>
+  //       <h3>Added Items & Test</h3>
+  //       <AddMedicine/>
+  //    </div>
+  //   { adminItems?.length>0?
+  //   adminItems?.map((item)=>(<div className='mt-4'>
+  //   <div className='border align-items-center p-3 d-flex'>
+  //     <h5>{item.name}</h5>
+  //     <div className='ms-auto d-flex'>
+  //      <EditItem edit={item}/>
+  //       <button className='btn'><i class="fa-solid fa-trash" onClick={()=>handleDelete(item._id)}></i></button>
+  //     </div>
+  //   </div>
+  //  </div>))
+  //   :<p className='text-danger fw-bolder fs-4'>No Items Uploaded By Admin</p>
+  //    }
+  //   </div>
+
+  <div className='card shadow p-5'>
+  <div className='d-flex justify-content-between'>
+    <h3>Added Items & Test</h3>
+    <AddMedicine/>
+  </div>
+
+  {adminItems?.length > 0 ? (
+    adminItems?.map((item) => (
+      <div className='mt-4'>
+        <div className='border align-items-center p-3 d-flex'>
+          <h5 style={{height:"100%" , width:"100%"}}>{item.name}</h5>
+          <div  style={{height:"100%" , width:"100%"}} className='ms-auto d-flex'>
+            <EditItem edit={item} />
+            <button  style={{height:"100%" , width:"100%"}} className='btn'>
+              <i className="fa-solid fa-trash" onClick={() => handleDelete(item._id)}></i>
+            </button>
+          </div>
+        </div>
       </div>
-    </div>
-   </div>))
-    :<p className='text-danger fw-bolder fs-4'>No Items Uploaded By Admin</p>
-     }
-    </div>
+    ))
+  ) : (
+    <p className='text-danger fw-bolder fs-4'>No Items Uploaded By Admin</p>
+  )}
+</div>
+
   )
 }
 

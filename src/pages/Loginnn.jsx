@@ -79,7 +79,7 @@ function Loginnn() {
              <Form.Control type="text" placeholder="Enter Email" required value={adminData.email} onChange={(e)=>setAdminData({...adminData,email:e.target.value})}   />
              </Form.Group>
              <Form.Group className='mb-3 w-75' controlId="validationCustom04">
-             <Form.Control type="text" placeholder="Password" required value={adminData.password} onChange={(e)=>setAdminData({...adminData,password:e.target.value})} />
+             <Form.Control type="Password" placeholder="Password" required value={adminData.password} onChange={(e)=>setAdminData({...adminData,password:e.target.value})} />
              </Form.Group>
              </Form>
  

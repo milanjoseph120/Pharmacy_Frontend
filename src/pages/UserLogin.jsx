@@ -104,7 +104,7 @@ function UserLogin() {
              <Form.Control type="text" placeholder="Enter Email" required  value={userData.email} onChange={(e)=>setUserData({...userData,email:e.target.value})}    />
              </Form.Group>
              <Form.Group className='mb-3 w-75' controlId="validationCustom04">
-             <Form.Control type="text" placeholder="Password" required value={userData.password} onChange={(e)=>setUserData({...userData,password:e.target.value})}  />
+             <Form.Control type="password" placeholder="Password" required value={userData.password} onChange={(e)=>setUserData({...userData,password:e.target.value})}  />
              </Form.Group>
              </Form>
  

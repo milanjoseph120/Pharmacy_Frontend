@@ -26,22 +26,54 @@ console.log(cart);
     navigate('/')
   }
   return (
-    <Navbar expand="lg" className="bg-info fixed-top">
-    <Container>
-      <Navbar.Brand><Link to={'/'} style={{textDecoration:"none",color:"white"}}><i class="fa-solid fa-prescription-bottle-medical me-3"></i>PharmEasy</Link></Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-     <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="ms-auto ">
-          <Nav.Link className='btn border rounded' ><Link to={'/wishlist'} style={{textDecoration:"none",color:"white"}}><i class="fa-solid fa-heart fa-bounce me-3" style={{color:"red"}}></i>WishList <Badge bg="secondary" className='rounded ms-2'>{wishlist.length}</Badge></Link></Nav.Link>
-          <Nav.Link className='btn border rounded ms-4'><Link to={'/cart'} style={{textDecoration:"none",color:"white"}}><i class="fa-solid fa-cart-shopping fa-bounce me-3"></i>Cart <Badge bg="secondary" className='rounded ms-2 '>{cart.length}</Badge></Link></Nav.Link>  
-        </Nav>
-      </Navbar.Collapse>
-     {
-      labtest &&
-      <button onClick={handleLogout} className='btn btn-warning ms-3'><i class="fa-solid fa-power-off me-2"></i>Logout</button>
-     }
-    </Container>
-  </Navbar>
+  //   <Navbar expand="lg" className="bg-info fixed-top">
+  //   <Container>
+  //     <Navbar.Brand><Link to={'/'} style={{textDecoration:"none",color:"white"}}><i class="fa-solid fa-prescription-bottle-medical me-3"></i>PharmEasy</Link></Navbar.Brand>
+  //     <Navbar.Toggle aria-controls="basic-navbar-nav" />
+  //    <Navbar.Collapse id="basic-navbar-nav">
+  //       <Nav className="ms-auto ">
+  //         <Nav.Link className='btn border rounded' ><Link to={'/wishlist'} style={{textDecoration:"none",color:"white"}}><i class="fa-solid fa-heart fa-bounce me-3" style={{color:"red"}}></i>WishList <Badge bg="secondary" className='rounded ms-2'>{wishlist.length}</Badge></Link></Nav.Link>
+  //         <Nav.Link className='btn border rounded ms-4'><Link to={'/cart'} style={{textDecoration:"none",color:"white"}}><i class="fa-solid fa-cart-shopping fa-bounce me-3"></i>Cart <Badge bg="secondary" className='rounded ms-2 '>{cart.length}</Badge></Link></Nav.Link>  
+  //       </Nav>
+  //     </Navbar.Collapse>
+  //    {
+  //     labtest &&
+  //     <button onClick={handleLogout} className='btn btn-warning ms-3'><i class="fa-solid fa-power-off me-2"></i>Logout</button>
+  //    }
+  //   </Container>
+  // </Navbar>
+
+  <Navbar expand="lg" className="bg-info fixed-top">
+  <Container>
+    <Navbar.Brand>
+      <Link to={'/'} style={{ textDecoration: "none", color: "white" }}>
+        <i className="fa-solid fa-prescription-bottle-medical me-3"></i>PharmEasy
+      </Link>
+    </Navbar.Brand>
+    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+    <Navbar.Collapse id="basic-navbar-nav">
+      <Nav className="ms-auto ">
+        <Nav.Link className='btn border rounded'>
+          <Link to={'/wishlist'} style={{ textDecoration: "none", color: "white" }}>
+            <i className="fa-solid fa-heart fa-bounce me-3" style={{ color: "red" }}></i>WishList
+            <Badge bg="secondary" className='rounded ms-2'>{wishlist.length}</Badge>
+          </Link>
+        </Nav.Link>
+        <Nav.Link className='btn border rounded ms-4'>
+          <Link to={'/cart'} style={{ textDecoration: "none", color: "white" }}>
+            <i className="fa-solid fa-cart-shopping fa-bounce me-3"></i>Cart
+            <Badge bg="secondary" className='rounded ms-2'>{cart.length}</Badge>
+          </Link>
+        </Nav.Link>
+      </Nav>
+      {labtest &&
+        <button onClick={handleLogout} className='btn btn-warning ms-3'>
+          <i className="fa-solid fa-power-off me-2"></i>Logout
+        </button>
+      }
+    </Navbar.Collapse>
+  </Container>
+</Navbar>
   )
 }
 

@@ -59,56 +59,101 @@ function Medicine() {
       getAllUserItems()
     },[searchKey])
   return (
-    <>
-    <Header/>
-    <div style={{backgroundColor:"lightblue",height:"92vh"}}>
-     <div className='container-fluid rounded'>
-     <Row className='align-items-center p-5' style={{marginTop:"50px"}}>
+    // <>
+    // <Header/>
+    // <div style={{backgroundColor:"lightblue",height:"92vh"}}>
+    //  <div className='container-fluid rounded'>
+    //  <Row className='align-items-center p-5' style={{marginTop:"50px"}}>
          
-         <Col sm={12} md={6}>
-           <img className='w-90' height={"70%"} width={"70%"} src={boy} alt="" />
-         </Col>
+    //      <Col sm={12} md={6}>
+    //        <img className='w-90' height={"70%"} width={"70%"} src={boy} alt="" />
+    //      </Col>
 
-         <Col sm={12} md={6}>
-           <h1 style={{color:"green"}}>Why Should You <br/> Choose Us</h1>
-           <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.<br/> Asperiores quis rem aliquid id voluptatibus mollitia distinctio<br/>  autem quo ut. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    //      <Col sm={12} md={6}>
+    //        <h1 style={{color:"green"}}>Why Should You <br/> Choose Us</h1>
+    //        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.<br/> Asperiores quis rem aliquid id voluptatibus mollitia distinctio<br/>  autem quo ut. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
 
-           <Card style={{ width: '14rem',boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
-      <Card.Img variant="top" src={review} />
-      <Card.Body >
-        <Card.Title  className='fw-bold' style={{color:"red"}}>12K Satisfied Customer Reviews</Card.Title>
-      </Card.Body>
-    </Card>
-         </Col>
+    //        <Card style={{ width: '14rem',boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
+    //   <Card.Img variant="top" src={review} />
+    //   <Card.Body >
+    //     <Card.Title  className='fw-bold' style={{color:"red"}}>12K Satisfied Customer Reviews</Card.Title>
+    //   </Card.Body>
+    // </Card>
+    //      </Col>
 
-        </Row>
-     </div>
-      </div>
+    //     </Row>
+    //  </div>
+    //   </div>
     
 
    
    
 
 
-        <div style={{marginTop:"100px" , color:"green"}} className='text-center'>
-       <h1>What Are You Looking For ?</h1>
-       <div className='mb-3 mt-3 d-flex justify-content-center align-items-center'>
-         <div className='d-flex w-25'>
-             <input value={searchKey} onChange={e=>setSearchKey(e.target.value)} type="text" placeholder='Search' className='form-control rounded' /> <i class="fa-solid fa-magnifying-glass mt-3" style={{marginLeft:"-40px" ,color:"lightgray" }}></i>
-         </div>
-       </div>
-    </div>
+    //     <div style={{marginTop:"100px" , color:"green"}} className='text-center'>
+    //    <h1>What Are You Looking For ?</h1>
+    //    <div className='mb-3 mt-3 d-flex justify-content-center align-items-center'>
+    //      <div className='d-flex w-25'>
+    //          <input value={searchKey} onChange={e=>setSearchKey(e.target.value)} type="text" placeholder='Search' className='form-control rounded' /> <i class="fa-solid fa-magnifying-glass mt-3" style={{marginLeft:"-40px" ,color:"lightgray" }}></i>
+    //      </div>
+    //    </div>
+    // </div>
 
-    <Row className='container-fluid mt-5 ms-4'>
+    // <Row className='container-fluid mt-5 ms-4'>
       
-     {allItems?.length>0? 
-     allItems?.map((item)=>(<Col sm={12} md={6} lg={4} className='mt-5'>
-      <MedicineCard itemss= {item}  />
-      </Col>))
-     :<p className='fw-bold' style={{color:"red"}}>Nothing to display</p>
-      }
-    </Row>
-    </>
+    //  {allItems?.length>0? 
+    //  allItems?.map((item)=>(<Col sm={12} md={6} lg={4} className='mt-5'>
+    //   <MedicineCard itemss= {item}  />
+    //   </Col>))
+    //  :<p className='fw-bold' style={{color:"red"}}>Nothing to display</p>
+    //   }
+    // </Row>
+    // </>
+
+    <>
+  <Header />
+  <div style={{ backgroundColor: "lightblue", height: "92vh" }}>
+    <div className='container-fluid rounded'>
+      <Row className='align-items-center p-5' style={{ marginTop: "50px" }}>
+        <Col xs={12} md={6}>
+          <img className='w-100' height={"50%"} width={"50%"} src={boy} alt="" />
+        </Col>
+        <Col xs={12} md={6}>
+          <h1 style={{ color: "green" }}>Why Should You <br /> Choose Us</h1>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.<br /> Asperiores quis rem aliquid id voluptatibus mollitia distinctio<br /> autem quo ut. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          <Card style={{ width: '14rem', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
+            <Card.Img variant="top" src={review} />
+            <Card.Body>
+              <Card.Title className='fw-bold' style={{ color: "red" }}>12K Satisfied Customer Reviews</Card.Title>
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
+    </div>
+  </div>
+
+  <div style={{ marginTop: "100px", color: "green" }} className='text-center'>
+    <h1>What Are You Looking For ?</h1>
+    <div className='mb-3 mt-3 d-flex justify-content-center align-items-center'>
+      <div className='d-flex w-75'>
+        <input value={searchKey} onChange={e => setSearchKey(e.target.value)} type="text" placeholder='Search' className='form-control rounded' />
+        <i className="fa-solid fa-magnifying-glass mt-3 ms-2" style={{ color: "lightgray" }}></i>
+      </div>
+    </div>
+  </div>
+
+  <Row className='container-fluid mt-5'>
+    {allItems?.length > 0 ?
+      allItems?.map((item, index) => (
+        <Col key={index} xs={12} md={6} lg={4} className='mt-5'>
+          <MedicineCard itemss={item} />
+        </Col>
+      ))
+      : <p className='fw-bold text-center' style={{ color: "red" }}>Nothing to display</p>
+    }
+  </Row>
+</>
+
   )
 }
 
